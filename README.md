@@ -1,3 +1,3 @@
 # nodejs
 
-## A sample of nodejs pprojects
+## A sample of nodejs projects
