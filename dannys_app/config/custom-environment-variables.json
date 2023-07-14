@@ -1,0 +1,8 @@
+{
+    "app": {
+        "seceret": "MY_SECRET"
+    },
+    "mysql": {
+        "password": "MYSQL_PASS"
+    }
+}

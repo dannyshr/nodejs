@@ -1,0 +1,14 @@
+{
+    "app": {
+        "port": 3000,
+        "name": "dannys_app",
+        "seceret": "s3cr32"
+    },
+    "mysql": {
+        "host": "localhost",
+        "port": "3306",
+        "username": "username",
+        "password": "password",
+        "database": "mydb"
+    }
+}
