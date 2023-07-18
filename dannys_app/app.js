@@ -12,10 +12,12 @@ const guestsRouter = require('./routes/guestsRouter');
 const usersRouter = require('./routes/usersRouter');
 const githubRouter = require('./routes/githubRouter');
 const mysql = require('./middlewares/mysql');
+const mongo = require('/middleware/mongo');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(mysql);
+app.use(mongo);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
