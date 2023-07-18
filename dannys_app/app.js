@@ -12,7 +12,7 @@ const guestsRouter = require('./routes/guestsRouter');
 const usersRouter = require('./routes/usersRouter');
 const githubRouter = require('./routes/githubRouter');
 const mysql = require('./middlewares/mysql');
-const mongo = require('/middleware/mongo');
+const mongo = require('./middlewares/mongo');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));

@@ -25,7 +25,7 @@ const dashboard = async (req, res, next) => {
         const userSymbols = await userSymbol.getForUser({userId: 123});
 
         const promises = userSymbols.map((userSymbol) => SymbolValue.findOne({symbol: userSymbol.symbol}).sort({when: -1}).limit(1));
-        const symbolValues = await promises.allSetteld(promises);
+        const symbolValues = await Promise.all(promises);
         
         console.log(symbolValues);
 
