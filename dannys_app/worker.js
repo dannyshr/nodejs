@@ -1,13 +1,17 @@
-process.env.SUPPRESS_NO_CONFIG_WARNING = true;
+process.env["NODE_CONFIG_DIR"] = __dirname + "/config";
+
 const axios = require('axios');
 const cheerio = require('cheerio');
 const mysql = require('mysql2');
 const util = require('util');
 const config = require('config');
 const mongoose = require('mongoose');
+const { io } = require('socket.io-client');
 
 const UserSymbol = require('./models/mysql/user-symbol');
 const SymbolValues = require('./models/mongo/symbol-value');
+
+const socket = io('http://localhost:' + config.get('app.port'));
 
 //mySql initialization
 const connection = mysql.createConnection(config.get('mysql'));
@@ -25,6 +29,10 @@ const scrape = async({symbol}) => {
         when: new Date()
     });
     await symbolValue.save();
+    socket.emit('workerUpdate', {
+        symbol: symbolValue.symbol,
+        value: symbolValue.value
+    });
     return value;
 }
 
@@ -35,10 +43,11 @@ const cycle = async () => {
         const symbols = await userSymbol.getSymbolsList();
         const promises = symbols.map((symbol => scrape(symbol)));
         const results = await Promise.allSettled(promises);
-
-    } catch (err) {
+    } 
+    catch (err) {
         console.log(err);
-    } finally {
+    } 
+    finally {
         setTimeout(cycle, config.get('worker.interval'));
     }
 
@@ -47,7 +56,7 @@ const cycle = async () => {
 (async () => {
     //mongo initialization
     await mongoose.connect(`mongodb://${config.get('mongo.host')}:${config.get('mongo.port')}/${config.get('mongo.dbname')}`);
-    
+
     //run worker in a cycle of 5 seconds interval
     cycle();
 

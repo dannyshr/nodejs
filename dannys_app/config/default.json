@@ -4,6 +4,11 @@
         "name": "dannys_app",
         "seceret": "s3cr32"
     },
+    "github": {
+        "clientID": "92472fcaa0c0b85b6f09",
+        "clientSecret": "6c4d75c95dab20089dc8eb701e097e017fe77f0f",
+        "callbackURL": "http://localhost:3000/github/callback"
+    },
     "mysql": {
         "host": "localhost",
         "port": "3306",

@@ -4,5 +4,8 @@
     },
     "mysql": {
         "password": "MYSQL_PASS"
+    },
+    "github": {
+        "clientSecret": "GITHUB_CLIENT_SECRET"
     }
 }
