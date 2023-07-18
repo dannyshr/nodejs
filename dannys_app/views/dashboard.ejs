@@ -8,7 +8,8 @@
 <table>
     <% userSymbols.forEach((userSymbolRecord) => { %>
         <tr>
-            <td><%=userSymbolRecord.symbol%></td>
+            <td><%=userSymbolRecord.symbol %></td>
+            <td><%=symbolValues.find(symbolValue) => symbolValue.symbol %></td>
         </tr>
     <% }) %>
 </table>

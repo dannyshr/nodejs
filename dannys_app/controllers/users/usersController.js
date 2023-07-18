@@ -1,3 +1,4 @@
+const SymbolValue = require('../../models/mongo/symbol-value');
 const UserSymbol = require('../../models/mysql/user-symbol');
 
 const addSymbol = async (req, res, next) => {
@@ -22,9 +23,16 @@ const dashboard = async (req, res, next) => {
             userName = "dannys";
         }
         const userSymbols = await userSymbol.getForUser({userId: 123});
+
+        const promises = userSymbols.map((userSymbol) => SymbolValue.findOne({symbol: userSymbol.symbol}).sort({when: -1}).limit(1));
+        const symbolValues = await promises.allSetteld(promises);
+        
+        console.log(symbolValues);
+
         res.render('dashboard', {
             username: userName,
             userSymbols,
+            symbolValues
         });
     } catch (err) {
         next(err);
