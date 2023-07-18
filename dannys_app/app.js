@@ -31,6 +31,7 @@ app.use(mongo);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 app.use(cookieParser());
 app.use(session({
     secret: 'secret',

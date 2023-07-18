@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/welcome',(req, res, next) => {
-    res.send('welcome from guestsRouter');
+router.get('/welcome',(req, res, next) => {
+    res.render('welcome', {});
 });
 
 module.exports = router;
