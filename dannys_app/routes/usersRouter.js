@@ -6,15 +6,13 @@ const enforceUser = require('../middlewares/enforce-user');
 const { addSymbol, dashboard } = require('../controllers/users/usersController');
 const { addSymbolValidator } = require('../controllers/users/usersValidator');
 
-//router.use(enforceUser);
+router.get('/dashboard', enforceUser, dashboard);
 
-router.get('/dashboard', dashboard);
-
-router.get('/logout',(req, res, next) => {
+router.get('/logout', enforceUser, (req, res, next) => {
     req.logout(() => {});
     res.redirect('/welcome');
 });
 
-router.post('/symbol', inputValidator(addSymbolValidator), addSymbol);
+router.post('/symbol', enforceUser, inputValidator(addSymbolValidator), addSymbol);
 
 module.exports = router;
