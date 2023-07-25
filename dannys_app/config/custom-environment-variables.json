@@ -3,7 +3,7 @@
         "seceret": "MY_SECRET"
     },
     "mysql": {
-        "password": "MYSQL_PASS"
+        "password": "MYSQL_PASSWORD"
     },
     "github": {
         "clientSecret": "GITHUB_CLIENT_SECRET"

@@ -4,7 +4,7 @@
   "description": "my first node.js application",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node initdb.js && node app.js",
     "test": "mocha ./tests"
   },
   "keywords": [
