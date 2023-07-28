@@ -1,0 +1,13 @@
+{
+    "mysql": {
+        "host": "mysql"
+    },
+    "worker": {
+        "io": {
+            "host": "app"
+        }
+    },
+    "mongo": {
+        "host": "mongo"
+    }
+}

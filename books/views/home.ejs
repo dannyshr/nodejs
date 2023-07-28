@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+        </script>
+    </head>
+    <body>
+        <p>hello github user: <%=username%></p><p><a href="/logout" title="click here to logout">logout</a></a></p>
+        <form action="/search" method="POST">
+            <label for="query">Search for: </label>
+            <input type="text" name="query" id="query">
+            <button>Search</button>
+        </form>
+        
+        <table>
+            <% books.forEach((book) => { %>
+                <tr>
+                    <td><%= book.title %></td>
+                </tr>
+            <% }) %>
+        </table>    
+    </body>
+</html>
