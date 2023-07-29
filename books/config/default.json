@@ -4,6 +4,6 @@
         "name": "books"
     },
     "mongo": {
-        "url": "mongodb://localhost:27017/ebs"
+        "url": "mongodb+srv://ebsuser:CtWw4DbvUDEhCJL6@cluster1.3nev0pm.mongodb.net/?retryWrites=true&w=majority"
     }
 }
