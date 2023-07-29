@@ -1,0 +1,7 @@
+{
+    "app": {
+        "port": 3000,
+        "name": "dannys app DEV",
+        "seceret": "s3cr32"
+    }
+}

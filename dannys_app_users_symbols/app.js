@@ -12,6 +12,7 @@ const errorHandler = require('./middlewares/error');
 const guestsRouter = require('./routes/guestsRouter');
 const usersRouter = require('./routes/usersRouter');
 const githubRouter = require('./routes/githubRouter');
+const apiRouter = require('./routes/ap');
 const mysql = require('./middlewares/mysql');
 const mongo = require('./middlewares/mongo');
 const session = require('express-session');

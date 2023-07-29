@@ -12,6 +12,7 @@ const errorHandler = require('./middlewares/error');
 const guestsRouter = require('./routes/guestsRouter');
 const usersRouter = require('./routes/usersRouter');
 const githubRouter = require('./routes/githubRouter');
+const apiRouter = require('./routes/api');
 const mysql = require('./middlewares/mysql');
 const mongo = require('./middlewares/mongo');
 const session = require('express-session');
@@ -59,6 +60,7 @@ app.use(auth.session());
 app.use('/',guestsRouter);
 app.use('/',usersRouter);
 app.use('/github',githubRouter);
+app.use('/api',apiRouter);
 
 app.use(errorHandler);
 app.use(notFound);
