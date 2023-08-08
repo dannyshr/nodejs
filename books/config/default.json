@@ -1,9 +1,0 @@
-{
-    "app": {
-        "port": 3000,
-        "name": "books"
-    },
-    "mongo": {
-        "url": "mongodb+srv://ebsuser:CtWw4DbvUDEhCJL6@cluster1.3nev0pm.mongodb.net/?retryWrites=true&w=majority"
-    }
-}
